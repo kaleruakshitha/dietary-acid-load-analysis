@@ -1,13 +1,25 @@
+# Local Python / R artifacts
 __pycache__/
-*.pyc
+*.py[cod]
+.pytest_cache/
 .venv/
 venv/
-.env
+.Rhistory
+.RData
+.Rproj.user/
 .DS_Store
+
+# Original downloads and participant-level analytical records
 data/raw/
+data/interim/
 data/processed/
 *.xpt
 *.parquet
+*.duckdb
 *.sqlite
-.Rhistory
-.RData
+.env
+.env.*
+
+# Figures and results should be reviewed before public release;
+# keep local generated files out of Git unless explicitly selected.
+outputs/figures/
