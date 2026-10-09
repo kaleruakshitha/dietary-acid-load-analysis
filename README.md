@@ -55,12 +55,17 @@ I studied Nutrition Science and wanted to use analytical tools to investigate a 
 | --- | --- |
 | Key statistical findings | [Results summary](docs/results.md) |
 | Food-category interpretation | [Food-category summary](docs/food-category-summary.md) |
-| Python analytical feature engineering | [Original PRAL/eGFR functions](src/features.py) |
+| Python analytical feature engineering | [PRAL/eGFR functions](src/features.py) |
+| Full cohort build | [build_cohort.py](scripts/build_cohort.py) |
+| Recall-day reliability analysis | [analyze_reliability.py](scripts/analyze_reliability.py) |
+| Survey-weighted R regression | [analyze_regression.R](scripts/analyze_regression.R) |
+| Food-category analysis | [analyze_food_categories.py](scripts/analyze_food_categories.py) |
+| Python dependencies | [requirements.txt](requirements.txt) |
 | Python unit testing | [Feature tests](tests/test_features.py) |
 | SQL data integration | [Core participant SQL](sql/01_core_participant.sql) |
 | Reproducibility and limitations | [Reproducibility guide](docs/reproducibility.md) |
 
-The original full NHANES pipeline (including the complete R regression and food-category analysis scripts) is **still being transferred** from the provided ZIP. The short `src/pral.py` is an earlier example and is not the main original implementation; use `src/features.py` for the recovered project feature code. Reviewer-facing summaries distinguish reported results from independently reproduced runs.
+The original cohort, reliability, regression (R), and food-category analysis scripts are now in `scripts/`, with their supporting calculations in `src/` and original unit tests in `tests/`. The shorter `src/pral.py` and `tests/test_pral.py` are earlier reference examples; use `src/features.py` and the original test files for the main analysis. The original data and full end-to-end regression results have not been rerun here.
 
 ## Repository contents
 
