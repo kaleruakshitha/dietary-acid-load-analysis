@@ -1,32 +1,38 @@
-# Reproducing the analysis
+# Reproducibility and verification
 
-The original full NHANES/USDA processing and R model source files are not yet in this GitHub repository. The repository currently provides a transparent nutrient-equation reference and reported aggregate results, **not a full rerunnable pipeline**.
+## Files now available
+The original scripts for NHANES downloads, participant-cohort construction, recall reliability, survey-weighted regression (R), food-category processing and food-source validation are published in `scripts/`. Supporting Python functions are in `src/` and the original tests in `tests/`.
 
-## Reference calculator
+## What was actually verified
+- **Python unit tests:** All 14 tests in the supplied original project ZIP passed locally with `python -m unittest discover -s tests -v` (October 2026).
+- **Reported results:** Saved aggregate output tables in the supplied project package are consistent, after rounding, with the reported two-day-mean PRAL fully adjusted coefficient (−0.0316), confidence interval (−0.0935 to 0.0303) and p-value (0.293), n=3,321.
+- **Not yet verified:** A fresh end-to-end run from original raw NHANES and USDA files, including execution of the R `survey` regression. Rscript was not available in the review environment. Passing unit tests and reading existing output tables do not independently reproduce the regression estimates.
 
-Using Python 3 from the repository root:
+## Run the tests
+Create a Python environment and install the dependencies from `requirements.txt`. Then run from the repository root:
 
 ```bash
+python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ```
 
-Example:
+## Reproduce the analysis using your original saved data
+Follow the sequence below with the precise NHANES August 2021–August 2023 and USDA/WWEIA input files used in the project. This is a **run plan**, not a newly validated fresh pipeline run.
 
-```python
-from src.pral import pral
-print(pral(70, 1000, 2500, 300, 800))
+```bash
+python scripts/download_nhanes.py
+python scripts/build_cohort.py
+python scripts/analyze_reliability.py
+Rscript scripts/install_r_dependencies.R
+Rscript scripts/analyze_regression.R
+python scripts/validate_food_sources.py
+python scripts/analyze_food_categories.py
 ```
 
-Inputs must be daily nutrient totals in grams (protein) and milligrams (minerals).
+The USDA category crosswalk is a separate required input and must be placed under `data/raw/usda/` with the filename expected by `validate_food_sources.py`. The raw NHANES and participant-level output folders are intentionally not published. Source files downloaded today can differ from the project's September 2026 snapshot and source websites may change.
 
-## Full analysis requirements
+## Data handling
+Do not publish individual participant records, processed participant-level cohorts, or data containing direct identifiers. The portfolio only needs source code, reproducible commands, non-disclosive aggregate results, and documented methods.
 
-The original project used NHANES August 2021–August 2023 data, two-day dietary sampling weights (`WTDR2D`), strata and PSUs, and an R `survey` v4.5 analysis with survey-weighted regression. Reproduction requires reobtaining the original public-use source files, documenting complete variable definitions and exclusion criteria, retrieving cycle-matched USDA/FNDDS/WWEIA mapping files, and restoring the original source code and environment. Do not assume unweighted calculations reproduce survey-weighted results.
-
-## Data safety
-
-Do not commit local participant-level extracts or intermediary tables. Public inputs should be downloaded from source agencies, and only reviewed aggregate outputs should be published.
-
-## Source
-
-*Dietary Acid Load and Serum Bicarbonate*, independent project report (September 2026).
+## Interpretation
+NHANES is observational and uses a complex sampling design. The reported small adjusted coefficient is statistically uncertain; no causal or clinical effect is established by this analysis.
