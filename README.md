@@ -49,6 +49,19 @@ The original project report records 14 passing validation tests. This refers to 
 
 I studied Nutrition Science and wanted to use analytical tools to investigate a question with real public-health relevance. The project helped me connect subject knowledge with data quality checks, meaningful statistical comparisons, and communicating results without overstating what observational data can show. It supports my transition toward graduate study in analytics.
 
+## Start here: reviewer navigation
+
+| What to inspect | File |
+| --- | --- |
+| Key statistical findings | [Results summary](docs/results.md) |
+| Food-category interpretation | [Food-category summary](docs/food-category-summary.md) |
+| Python analytical feature engineering | [Original PRAL/eGFR functions](src/features.py) |
+| Python unit testing | [Feature tests](tests/test_features.py) |
+| SQL data integration | [Core participant SQL](sql/01_core_participant.sql) |
+| Reproducibility and limitations | [Reproducibility guide](docs/reproducibility.md) |
+
+The original full NHANES pipeline (including the complete R regression and food-category analysis scripts) is **still being transferred** from the provided ZIP. The short `src/pral.py` is an earlier example and is not the main original implementation; use `src/features.py` for the recovered project feature code. Reviewer-facing summaries distinguish reported results from independently reproduced runs.
+
 ## Repository contents
 
 - [Reported results and limitations](docs/results.md)
