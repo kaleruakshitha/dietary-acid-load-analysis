@@ -70,8 +70,9 @@ The original cohort, reliability, regression (R), and food-category analysis scr
 ## Repository contents
 
 - [Reported results and limitations](docs/results.md)
-- [PRAL calculation reference implementation](src/pral.py)
-- [Calculator tests](tests/test_pral.py)
+- [Original PRAL and eGFR feature implementation](src/features.py)
+- [Original unit tests](tests/test_features.py)
+- [Survey-weighted regression script](scripts/analyze_regression.R)
 - [Data handling and workflow notes](docs/reproducibility.md)
 
 **Reproducibility status:** The original Python cohort, reliability, food-category, validation and R regression scripts have been restored. The complete analysis was not rerun in this environment: the saved source-data snapshot is not published and R was unavailable. The values above are checked against saved aggregate project output tables, not independently re-estimated from the raw source files in this review.
