@@ -43,7 +43,7 @@ How reliably does potential renal acid load (PRAL) estimated from two dietary re
 | SQL | Structured data querying in the broader project workflow |
 | Statistics | Reliability assessment, interval estimation, covariate adjustment, and interpretation |
 
-The original project report records 14 passing validation tests. This refers to the reported working analysis, **not a newly verified test run from the files currently in this GitHub repository**.
+The original project reported 14 passing validation tests. I reran the original ZIP's 14 Python unit tests in a local Python environment and all passed; a fresh full-data end-to-end run of the complete pipeline, including R regression, has not been performed.
 
 ## My motivation
 
@@ -65,7 +65,7 @@ I studied Nutrition Science and wanted to use analytical tools to investigate a 
 | SQL data integration | [Core participant SQL](sql/01_core_participant.sql) |
 | Reproducibility and limitations | [Reproducibility guide](docs/reproducibility.md) |
 
-The original cohort, reliability, regression (R), and food-category analysis scripts are now in `scripts/`, with their supporting calculations in `src/` and original unit tests in `tests/`. The shorter `src/pral.py` and `tests/test_pral.py` are earlier reference examples; use `src/features.py` and the original test files for the main analysis. The original data and full end-to-end regression results have not been rerun here.
+The original cohort, reliability, regression (R), and food-category analysis scripts are now in `scripts/`, with their supporting calculations in `src/` and original unit tests in `tests/`. The redundant example calculator and its separate example tests have been removed; the core original feature code and tests are under `src/` and `tests/`. The original data and full end-to-end regression results have not been rerun here.
 
 ## Repository contents
 
@@ -74,7 +74,7 @@ The original cohort, reliability, regression (R), and food-category analysis scr
 - [Calculator tests](tests/test_pral.py)
 - [Data handling and workflow notes](docs/reproducibility.md)
 
-**Reproducibility status:** The accompanying calculation implementation and tests were reconstructed from the final report for transparent demonstration. The **original full NHANES extraction, merging, food mapping, and R modeling scripts are not yet in this repository**. The published study estimates should be treated as *reported results*, not as reproduced by the small reference implementation alone.
+**Reproducibility status:** The original Python cohort, reliability, food-category, validation and R regression scripts have been restored. The complete analysis was not rerun in this environment: the saved source-data snapshot is not published and R was unavailable. The values above are checked against saved aggregate project output tables, not independently re-estimated from the raw source files in this review.
 
 ## References
 
