@@ -73,7 +73,7 @@ The original project reported 14 passing validation tests. I reran the original 
 
 I studied Nutrition Science and wanted to use analytical tools to investigate a question with real public-health relevance. The project helped me connect subject knowledge with data quality checks, meaningful statistical comparisons, and communicating results without overstating what observational data can show. It supports my transition toward graduate study in analytics.
 
-## Start here: reviewer navigation
+## Explore the Project
 
 | What to inspect | File |
 | --- | --- |
