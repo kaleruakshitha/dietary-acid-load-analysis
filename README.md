@@ -34,6 +34,30 @@ How reliably does potential renal acid load (PRAL) estimated from two dietary re
 - **Model:** Survey-weighted linear regression of serum bicarbonate, adjusting for demographic, socioeconomic, behavioral, dietary energy, and kidney-function measures. Used NHANES two-day dietary weights, strata and PSUs.
 - **Food contributions:** Summarized food-level PRAL components by USDA/WWEIA categories.
 
+## Visual results
+
+These figures display **verified values from the saved aggregate output tables**, not a fresh rerun of the full NHANES analysis. They are concise visual summaries designed for portfolio review.
+
+### Regression estimate and confidence intervals
+
+![Fully adjusted PRAL and serum bicarbonate exposure comparison](outputs/figures/pral_bicarbonate_exposure_comparison.svg)
+
+The fully adjusted estimate for two-day mean PRAL was **−0.0316 mmol/L per 10 mEq/day** (95% CI: −0.0935 to 0.0303), with no clear independent association established.
+
+### How consistently participants remained in the same PRAL quartile
+
+![PRAL quartile changes between recall days](outputs/figures/pral_quartile_reclassification.svg)
+
+**66.7%** of participants moved at least one quartile between the two dietary recall days (survey-weighted proportions).
+
+### Food categories contributing to PRAL
+
+![Selected food-category PRAL contributions](outputs/figures/food_category_net_pral_contributions.svg)
+
+These are **selected leading categories**, not an exhaustive ranking or a measure of overall food quality.
+
+**Selected aggregate data:** [Exposure comparison](outputs/tables/pral_bicarbonate_exposure_comparison.csv) · [Quartile movement](outputs/tables/quartile_reclassification_summary.csv) · [Food-category results](outputs/tables/food_category_pral_selected.csv).
+
 ## Programming and analytical skills
 
 | Technology | Role |
@@ -54,6 +78,7 @@ I studied Nutrition Science and wanted to use analytical tools to investigate a 
 | What to inspect | File |
 | --- | --- |
 | Key statistical findings | [Results summary](docs/results.md) |
+| Charts and verified aggregate tables | [Visual results](#visual-results) |
 | Food-category interpretation | [Food-category summary](docs/food-category-summary.md) |
 | Python analytical feature engineering | [PRAL/eGFR functions](src/features.py) |
 | Full cohort build | [build_cohort.py](scripts/build_cohort.py) |
