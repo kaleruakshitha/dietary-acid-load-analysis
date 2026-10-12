@@ -1,0 +1,4 @@
+exposure,estimate_per_10_mEq_day,ci_lower,ci_upper
+Day 1 PRAL,-0.015947,-0.06285,0.030955
+Day 2 PRAL,-0.022288,-0.080874,0.036298
+Two-day mean,-0.031613,-0.093492,0.030266
