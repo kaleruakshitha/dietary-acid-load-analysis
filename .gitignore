@@ -22,4 +22,4 @@ data/processed/
 
 # Figures and results should be reviewed before public release;
 # keep local generated files out of Git unless explicitly selected.
-outputs/figures/
+# Published figures are tracked; do not ignore this folder.
