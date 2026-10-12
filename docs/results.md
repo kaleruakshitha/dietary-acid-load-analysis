@@ -1,6 +1,6 @@
 # Reported project results
 
-These figures are transcribed from *Dietary Acid Load and Serum Bicarbonate: Measurement reliability and food-category contributions in NHANES 2021–2023* (September 2026). They have **not yet been reproduced from original analysis scripts in this repository**.
+These findings come from the project's saved analytical outputs and September 2026 report, *Dietary Acid Load and Serum Bicarbonate: Measurement reliability and food-category contributions in NHANES 2021–2023*. The original analysis scripts and supporting documentation are available in this repository. All 14 Python unit tests passed, and reported statistics were checked against the saved aggregate output tables. A full independent rerun from the original NHANES and USDA datasets, including the R regression, has not yet been completed.
 
 ## Sample construction
 
